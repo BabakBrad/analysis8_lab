@@ -1,2 +1,3 @@
-matplotlib==3.1.2
-pygame
+stdiomask
+sqlite3
+termcolor
