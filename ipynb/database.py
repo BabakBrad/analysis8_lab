@@ -126,8 +126,8 @@ class db:
     def not_implemented(self, func):
         print(func.__name__ + ' method is Not implemented')
     
-    def escape_sql_meta(sql_query):
-        pass
+def escape_sql_meta(sql_query):
+    pass
 
 client = db(company_db_name, client_tb_name, users_tb_name)
 main_menu = [[1, 'login', client.login ], [0, 'Exit', client.close]]
