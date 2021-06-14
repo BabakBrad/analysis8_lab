@@ -1,9 +1,9 @@
 from sqlite3.dbapi2 import OperationalError
 
-
 class user_interface:
 
-    default_menu = [[1, 'option 1', None], [2, 'option 2', None], [3, 'option 2', None], [0, 'Exit', 'quit']]
+
+    default_menu = [[1, 'option 1', None], [2, 'option 2', None], [3, 'option 2', None], [0, 'Exit', None]]
 
     def __init__(self, menuheading='Not logged in', menueitems = default_menu):
         self.menuheading = menuheading
@@ -13,7 +13,7 @@ class user_interface:
 
     def menu_display(self):
         print(self.menuheading)
-        print('___________________________\n')        
+        print('_________________________________\n')        
         for option in self.menuitems:
             print('[' + str(option[0]) + ']' + ' ' + option[1])
                 
@@ -29,7 +29,7 @@ class user_interface:
             option = -1
             print()
 
-        while option != 0:
+        while option != self.menuoptions[-1]:
             if option in self.menuoptions:
                 if self.menuitems == self.default_menu:
                     self.default_no_menuitems()
@@ -39,10 +39,8 @@ class user_interface:
                         if func_return == 0:
                             option = 0
                             continue
-                    except OperationalError as ErrorMessage:
-                        print(ErrorMessage)
-                    except TypeError:
-                        print('Function is not defined for the option in the menu.')
+                    except:
+                        print('Error!')
             else:
                 print('invalid option')
 
