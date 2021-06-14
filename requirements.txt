@@ -1,3 +1,4 @@
 stdiomask
 sqlite3
 termcolor
+ipython-sql
